@@ -34,7 +34,7 @@
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"VIRIDIAN Digital","url":"https://viridiandigital.vercel.app","logo":"https://viridiandigital.vercel.app/apple-touch-icon.png","slogan":"Where Design Meets Engineering.","email":"contact.viridiandigital@gmail.com","telephone":"+213798800873","founder":{"@type":"Person","name":"Ramzi Chouchan"},"address":{"@type":"PostalAddress","addressLocality":"Sétif","addressCountry":"DZ"},"sameAs":["https://www.linkedin.com/company/viridiandigital/","https://instagram.com/viridian.digital","https://x.com/VIRIDIANDIGITAL","https://payhip.com/VIRIDIANDigital"]}
+{"@context":"https://schema.org","@type":"Organization","name":"VIRIDIAN Digital","url":"https://viridiandigital.vercel.app","logo":"https://viridiandigital.vercel.app/apple-touch-icon.png","slogan":"Where Design Meets Engineering.","email":"contact.viridiandigital@gmail.com","telephone":"+213798800873","founder":{"@type":"Person","name":"Ramzi Chouchan","jobTitle":"Founder","image":"https://viridiandigital.vercel.app/ramzi-chouchan.jpg"},"address":{"@type":"PostalAddress","addressLocality":"Sétif","addressCountry":"DZ"},"sameAs":["https://www.linkedin.com/company/viridiandigital/","https://instagram.com/viridian.digital","https://x.com/VIRIDIANDIGITAL","https://payhip.com/VIRIDIANDigital"]}
 </script>
 <style>
 /* ---------- Polices auto-hébergées (aucun appel à un service tiers) ---------- */
@@ -297,6 +297,44 @@ footer.site .lockup{--s:15px}
 
 footer.site{border-top:1px solid var(--line);padding:20px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+/* ---------- Mot du fondateur (carte) ---------- */
+.sec.fnd-sec{padding-block:clamp(40px,6vw,64px)}
+.fcard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3.4vw,40px);align-items:start;max-width:860px;background:var(--surf);border:1px solid var(--line);padding:clamp(20px,3vw,32px)}
+.fcard-ph{margin:0;width:clamp(110px,15vw,168px);aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line2)}
+.fcard-ph picture,.fcard-ph img{display:block;width:100%;height:100%}
+.fcard-ph img{object-fit:cover;object-position:50% 20%}
+.fcard-ph img{object-fit:cover;object-position:50% 24%}
+.fcard h2{font:500 clamp(18px,1.9vw,22px)/1.2 var(--f-display)}
+.fcard blockquote{margin:12px 0 0}
+.fcard blockquote p{font:400 clamp(15px,1.45vw,17px)/1.6 var(--f-body);color:var(--muted);max-width:60ch;text-wrap:pretty}
+.fnd-sig{margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
+.fnd-sig .who{display:flex;flex-direction:column;gap:3px}
+.fnd-sig .nm{font:500 17px/1.2 var(--f-display)}
+.mono-rc{flex:none;width:64px;height:64px;position:relative;color:var(--fg)}
+.mono-rc svg{display:block;width:100%;height:100%;overflow:visible}
+.mono-rc text{font-family:var(--f-display);font-weight:300;fill:currentColor}
+.mono-rc line{stroke:var(--verm);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.16,1,.3,1) .35s}
+.rv.in .mono-rc line{stroke-dashoffset:0}
+@media (max-width:560px){.fcard{grid-template-columns:1fr}.fcard-ph{width:112px}}
+@media (prefers-reduced-motion:reduce){.mono-rc line{stroke-dashoffset:0}}
+
+/* ---------- Fiche contact : QR (souris) ou bouton (tactile) ---------- */
+.vc{margin-top:clamp(24px,3vw,36px);max-width:520px;border:1px solid var(--line);background:var(--surf);padding:clamp(16px,2.4vw,24px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center}
+.vc-qr{width:128px;background:#fff;padding:0;line-height:0}
+.vc-qr svg{display:block;width:128px;height:128px}
+.vc-t .vc-d{margin-top:8px;color:var(--muted);font-size:15px}
+.vc-t .btn{margin-top:16px}
+.vc-t .link{display:inline-flex;align-items:center;gap:10px;margin-top:14px}
+.vc-t svg.dl{width:12px;height:12px}
+.vc-t svg.dl path{fill:none;stroke:currentColor;stroke-width:1.25}
+.vc .touch{display:none}
+@media (hover:none),(pointer:coarse),(max-width:700px){
+  .vc{grid-template-columns:1fr}
+  .vc-qr,.vc .fine{display:none}
+  .vc .touch{display:inline-flex}
+  .vc-t .vc-d.touch{display:block}
+}
+
 /* ---------- Apparition au défilement ---------- */
 .js .rv{opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .js .rv.in{opacity:1;transform:none}
@@ -323,15 +361,6 @@ nav.main a .ext{display:inline-block;width:8px;height:8px;margin-left:6px;vertic
 @media (min-width:641px){.ps{display:none}}
 
 /* Coordonnées */
-.cinfo{margin-top:clamp(24px,3vw,36px);border-top:1px solid var(--line);max-width:520px}
-.cinfo>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
-.cinfo dt{font:400 11px/1.5 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.cinfo dd{margin:0;font-size:15px;word-break:break-word}
-.cinfo a{border-bottom:1px solid var(--line2);transition:border-color .2s}
-.cinfo a:hover{border-color:var(--verm)}
-.vcf{margin-top:20px;display:inline-flex;align-items:center;gap:10px}
-.vcf svg{width:12px;height:12px}
-.vcf svg path{fill:none;stroke:currentColor;stroke-width:1.25}
 .mail a{font-size:clamp(16px,2vw,24px);word-break:break-word}
 
 /* Formulaire */
@@ -359,7 +388,7 @@ footer.site{display:grid;grid-template-columns:auto 1fr auto;gap:20px 32px;align
 footer.site .fl{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center}
 footer.site .fl .link{padding:6px 0}
 footer.site .fr{display:flex;align-items:center;gap:20px;justify-self:end}
-footer.site .copy{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;padding-top:16px;border-top:1px solid var(--line)}
+footer.site .copy{grid-column:1/-1;display:flex;justify-content:center;text-align:center;flex-wrap:wrap;gap:8px 20px;padding-top:16px;border-top:1px solid var(--line)}
 @media (max-width:860px){footer.site{grid-template-columns:1fr}footer.site .fl{justify-content:flex-start}footer.site .fr{justify-self:start;flex-wrap:wrap}}
 
 /* Modales légales */
@@ -509,10 +538,31 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
     </div>
   </section>
 
+  <!-- ===================== MOT DU FONDATEUR ===================== -->
+  <section class="sec fnd-sec" id="fondateur" aria-labelledby="t-fnd">
+    <i class="tick a"></i><i class="tick b"></i>
+    <div class="sec-h rv"><span class="lbl sq">03 · <span data-i="fnd_k">Fondateur</span></span><span class="lbl" data-i="fnd_tag">Mot du fondateur</span></div>
+    <article class="fcard rv">
+      <figure class="fcard-ph">
+        <picture>
+          <source srcset="/ramzi-chouchan.webp" type="image/webp">
+          <img src="/ramzi-chouchan.jpg" width="720" height="964" loading="lazy" decoding="async" alt="Portrait de Ramzi Chouchan, fondateur de VIRIDIAN Digital" data-ia="alt:fnd_alt">
+        </picture>
+      </figure>
+      <div>
+        <h2 id="t-fnd" data-i="fnd_h2">L'engagement VIRIDIAN Digital</h2>
+        <blockquote>
+          <p data-i="fnd_q">«&nbsp;Trop souvent, les outils performants manquent d'ergonomie, et les beaux produits manquent de structure. VIRIDIAN Digital est né de la volonté de réconcilier ces deux mondes : la rigueur de l'ingénierie des données et la précision du design minimaliste. Ensemble, bâtissons les fondations numériques de vos prochains projets.&nbsp;»</p>
+        </blockquote>
+        <p class="fnd-sig" aria-label="Signature" data-ia="aria-label:fnd_sig"><span class="mono-rc" aria-hidden="true"><svg viewBox="0 0 64 64"><text x="6" y="30" font-size="34">R</text><text x="31" y="56" font-size="34">C</text><line x1="50" y1="6" x2="14" y2="60" pathLength="1"/></svg></span><span class="who"><span class="nm">Ramzi Chouchan</span><span class="lbl" data-i="fnd_role">Fondateur · VIRIDIAN Digital</span></span></p>
+      </div>
+    </article>
+  </section>
+
   <!-- ===================== CONTACT ===================== -->
   <section class="sec" id="contact" aria-labelledby="t-ct">
     <i class="tick a"></i><i class="tick b"></i>
-    <div class="sec-h rv"><span class="lbl sq">03 · Contact</span><span class="lbl dot" data-i="c_tag">Réponse par e-mail</span></div>
+    <div class="sec-h rv"><span class="lbl sq">04 · Contact</span><span class="lbl dot" data-i="c_tag">Réponse par e-mail</span></div>
     <div class="two">
       <div class="rv">
         <h2 class="h2" id="t-ct" data-i="c_h2">Parlons de votre besoin.</h2>
@@ -521,15 +571,16 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
           <a href="mailto:contact.viridiandigital@gmail.com" data-mail>contact.viridiandigital@gmail.com</a>
           <button class="pill" type="button" id="copy" data-i="copy">Copier</button>
         </div>
-        <dl class="cinfo">
-          <div><dt data-i="c_tel">Téléphone</dt><dd><a href="tel:+213798800873">+213 798 80 08 73</a></dd></div>
-          <div><dt data-i="c_loc">Lieu</dt><dd data-i="c_loc_v">Sétif, Algérie</dd></div>
-          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/company/viridiandigital/" target="_blank" rel="noopener noreferrer">VIRIDIAN Digital</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://instagram.com/viridian.digital" target="_blank" rel="noopener noreferrer">@viridian.digital</a></dd></div>
-          <div><dt>X</dt><dd><a href="https://x.com/VIRIDIANDIGITAL" target="_blank" rel="noopener noreferrer">@VIRIDIANDIGITAL</a></dd></div>
-          <div><dt data-i="shop">Boutique</dt><dd><a href="https://payhip.com/VIRIDIANDigital" target="_blank" rel="noopener noreferrer">payhip.com/VIRIDIANDigital</a></dd></div>
-        </dl>
-        <a class="link vcf" href="/viridian.vcf" download="viridian.vcf"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 5.5L6 8.5l3-3M1 11h10"/></svg><span data-i="vcf">Télécharger la fiche contact</span></a>
+        <div class="vc rv">
+          <div class="vc-qr fine"><svg viewBox="0 0 41 41" role="img" aria-label="QR code : fiche contact VIRIDIAN Digital" data-ia="aria-label:vc_qr" shape-rendering="crispEdges"><rect width="41" height="41" fill="#FFFFFF"/><path stroke="#0A0A0B" stroke-width="1" d="M4 4.5h7m1 0h1m1 0h1m3 0h5m4 0h1m2 0h7m-33 1h1m5 0h1m3 0h3m3 0h2m1 0h4m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m3 0h4m1 0h1m4 0h5m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h2m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m3 0h4m1 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m4 0h1m2 0h1m1 0h2m4 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h4m3 0h4m2 0h1m2 0h1m-25 1h1m3 0h1m1 0h3m1 0h1m3 0h1m2 0h1m1 0h1m1 0h9m2 0h1m-33 1h3m1 0h1m3 0h2m2 0h5m1 0h1m4 0h1m1 0h1m3 0h2m-30 1h1m4 0h2m3 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m2 0h1m1 0h1m-31 1h2m4 0h1m1 0h2m3 0h1m1 0h3m2 0h1m1 0h1m1 0h1m-25 1h3m1 0h2m1 0h2m1 0h1m1 0h2m3 0h1m1 0h5m1 0h1m1 0h2m1 0h2m-32 1h1m2 0h2m1 0h1m2 0h2m1 0h1m2 0h2m1 0h1m3 0h3m1 0h1m2 0h1m-30 1h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m1 0h3m1 0h3m1 0h1m1 0h1m-25 1h4m2 0h1m3 0h1m1 0h3m2 0h6m-30 1h8m2 0h1m3 0h2m1 0h2m1 0h5m1 0h1m1 0h1m2 0h1m-30 1h1m2 0h1m2 0h6m1 0h4m4 0h1m5 0h2m-30 1h2m2 0h2m2 0h1m2 0h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-32 1h2m3 0h1m1 0h1m2 0h1m2 0h2m1 0h1m2 0h4m4 0h1m3 0h1m-32 1h4m1 0h2m1 0h1m5 0h1m1 0h1m2 0h1m4 0h1m1 0h4m1 0h2m-33 1h2m1 0h2m5 0h2m1 0h1m3 0h5m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-26 1h6m3 0h1m2 0h1m1 0h1m2 0h3m2 0h1m1 0h2m-30 1h2m3 0h6m2 0h3m3 0h3m2 0h2m3 0h2m-33 1h2m1 0h1m1 0h2m2 0h2m1 0h3m1 0h2m1 0h4m1 0h6m-22 1h9m6 0h2m3 0h1m1 0h2m-32 1h7m1 0h1m2 0h1m3 0h1m1 0h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h1m-32 1h1m5 0h1m2 0h4m2 0h1m1 0h2m2 0h2m1 0h1m3 0h1m3 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m3 0h1m1 0h1m3 0h6m-30 1h1m1 0h3m1 0h1m2 0h1m3 0h2m1 0h1m2 0h1m3 0h2m1 0h6m-32 1h1m1 0h3m1 0h1m4 0h4m1 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-31 1h1m5 0h1m3 0h3m1 0h1m2 0h1m1 0h6m1 0h1m-27 1h7m1 0h6m1 0h1m1 0h1m2 0h5m1 0h1m5 0h1"/></svg></div>
+          <div class="vc-t">
+            <span class="lbl" data-i="vc_lbl">Fiche contact</span>
+            <p class="vc-d fine" data-i="vc_scan">Scannez le code avec votre téléphone pour enregistrer mes coordonnées.</p>
+            <p class="vc-d touch" data-i="vc_tap">Enregistrez mes coordonnées dans votre répertoire en un geste.</p>
+            <a class="btn touch" href="/viridian.vcf" download="viridian.vcf"><svg class="dl" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 5.5L6 8.5l3-3M1 11h10"/></svg><span data-i="vcf">Télécharger la fiche contact</span></a>
+            <a class="link fine" href="/viridian.vcf" download="viridian.vcf"><svg class="dl" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v7M3 5.5L6 8.5l3-3M1 11h10"/></svg><span data-i="vc_or">ou télécharger le fichier (.vcf)</span></a>
+          </div>
+        </div>
       </div>
       <form class="form rv" id="form" novalidate autocomplete="on">
         <div class="f2">
@@ -559,7 +610,6 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
   <nav class="fl" aria-label="Informations légales" data-ia="aria-label:legal_nav">
     <button class="link" type="button" data-open="dlg-legal" data-i="legal">Mentions légales</button>
     <button class="link" type="button" data-open="dlg-privacy" data-i="privacy">Politique de confidentialité</button>
-    <a class="link" href="/viridian.vcf" download="viridian.vcf" data-i="vcf_short">Fiche contact (.vcf)</a>
   </nav>
   <div class="fr">
     <div class="icons">
@@ -570,7 +620,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
     </div>
     <a class="link" href="#top" data-i="top">Retour en haut</a>
   </div>
-  <div class="copy lbl"><span>© 2026 VIRIDIAN Digital</span><span data-i="foot_loc">Sétif, Algérie</span></div>
+  <div class="copy lbl"><span>© 2026 VIRIDIAN Digital</span></div>
 </footer>
 
 <!-- ===================== MODALES LÉGALES (texte officiel FR / EN) ===================== -->
@@ -730,12 +780,15 @@ const EN = {
   st1t:'You describe the need', st1p:'A few lines are enough to get started.',
   st2t:'You receive a quote', st2p:'Scope, price and timeline, in black and white.',
   st3t:'I build and deliver', st3p:'You approve each stage before the next.',
+  fnd_k:'Founder', fnd_tag:'Founder\'s note', fnd_h2:'The VIRIDIAN Digital commitment',
+  fnd_q:'“\u00a0Too often, powerful tools lack usability, and beautiful products lack structure. VIRIDIAN Digital was founded to bridge these two worlds: the rigor of data engineering and the precision of minimalist design. Together, let\'s build the digital foundations of your next projects.\u00a0”',
+  fnd_role:'Founder · VIRIDIAN Digital', fnd_sig:'Signature', fnd_alt:'Portrait of Ramzi Chouchan, founder of VIRIDIAN Digital',
   c_tag:'Reply by email', c_h2:'Let\'s talk about your needs.', c_p:'A template to buy or a custom project: write to me in a few lines.',
-  copy:'Copy', c_tel:'Phone', c_loc:'Location', c_loc_v:'Sétif, Algeria', vcf:'Download the contact card',
+  copy:'Copy', vcf:'Download the contact card', vc_lbl:'Contact card', vc_scan:'Scan the code with your phone to save my contact details.', vc_tap:'Save my contact details to your address book in one tap.', vc_or:'or download the file (.vcf)', vc_qr:'QR code: VIRIDIAN Digital contact card',
   f_name:'Name', f_mail:'Email', f_subject:'Subject', o_devis:'Request a quote', o_modele:'Question about a template', o_autre:'Other question',
   f_consent:'By sending this message, you agree that your information is used to answer your request.',
   f_send:'Send message', legal_nav:'Legal information', legal:'Legal notice', privacy:'Privacy policy',
-  vcf_short:'Contact card (.vcf)', top:'Back to top', foot_loc:'Sétif, Algeria', close:'Close'
+  top:'Back to top', close:'Close'
 };
 const JS = {
   fr: {
