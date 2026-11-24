@@ -3,7 +3,7 @@ VERSION:3.0
 N:CHOUCHAN;Ramzi;;;
 FN:Ramzi CHOUCHAN
 ORG:VIRIDIAN Digital
-TITLE:Founder — Assets & Custom Solutions
+TITLE:Créateur numérique · Data et ingénierie
 TEL;TYPE=CELL,VOICE:+213798800873
 EMAIL;TYPE=INTERNET;TYPE=WORK:contact.viridiandigital@gmail.com
 URL;TYPE=WORK:https://viridiandigital.vercel.app
@@ -11,4 +11,5 @@ X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/company/viridiandigital/
 X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/viridian.digital
 X-SOCIALPROFILE;TYPE=twitter:https://x.com/VIRIDIANDIGITAL
 NOTE:VIRIDIAN Assets (Templates): https://viridiandigital.gumroad.com
+ADR;TYPE=WORK:;;;Sétif;;;Algérie
 END:VCARD
