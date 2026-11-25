@@ -34,7 +34,7 @@
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"VIRIDIAN Digital","url":"https://viridiandigital.vercel.app","logo":"https://viridiandigital.vercel.app/apple-touch-icon.png","slogan":"Where Design Meets Engineering.","email":"contact.viridiandigital@gmail.com","telephone":"+213798800873","founder":{"@type":"Person","name":"Ramzi Chouchan","jobTitle":"Founder","image":"https://viridiandigital.vercel.app/ramzi-chouchan.jpg"},"address":{"@type":"PostalAddress","addressLocality":"Sétif","addressCountry":"DZ"},"sameAs":["https://www.linkedin.com/company/viridiandigital/","https://instagram.com/viridian.digital","https://x.com/VIRIDIANDIGITAL","https://payhip.com/VIRIDIANDigital"]}
+{"@context":"https://schema.org","@type":"Organization","name":"VIRIDIAN Digital","url":"https://viridiandigital.vercel.app","logo":"https://viridiandigital.vercel.app/apple-touch-icon.png","slogan":"Where Design Meets Engineering.","email":"contact.viridiandigital@gmail.com","telephone":"+213798800873","founder":{"@type":"Person","name":"Ramzi Chouchan","jobTitle":"Founder","image":"https://viridiandigital.vercel.app/ramzi-chouchan.jpg"},"sameAs":["https://www.linkedin.com/company/viridiandigital/","https://instagram.com/viridian.digital","https://x.com/VIRIDIANDIGITAL","https://payhip.com/VIRIDIANDigital"]}
 </script>
 <style>
 /* ---------- Polices auto-hébergées (aucun appel à un service tiers) ---------- */
@@ -149,7 +149,8 @@ footer.site .lockup{--s:15px}
 .word{display:inline-flex;line-height:1}
 .name{margin-right:-.16em}
 .sep{display:block;width:1px;height:.8em;background:var(--muted);flex:none;opacity:.6}
-.desc{font:400 .4em/1 var(--f-mono);letter-spacing:.34em;color:var(--muted);transition:color .4s ease}
+.desc{font:400 max(.4em,10px)/1 var(--f-mono);letter-spacing:.34em;color:var(--muted);transition:color .4s ease}
+header.site .desc,footer.site .desc,.gm .desc{letter-spacing:.24em}
 .lockup.is-on[data-variant="compact"] .desc{color:var(--fg)}
 .g{fill:none;stroke:var(--guide);stroke-width:1;vector-effect:non-scaling-stroke}
 .axis,.flash{fill:none;stroke:var(--verm);stroke-width:1;vector-effect:non-scaling-stroke}
@@ -409,6 +410,10 @@ body:has(dialog[open]){overflow:hidden}
 .legal li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:6px;background:var(--fg)}
 .legal a{color:var(--fg);border-bottom:1px solid var(--line2)}
 html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!important}
+/* Très petits écrans (320 px) */
+@media(max-width:359px){.two{grid-template-columns:minmax(0,1fr)}.two>*,.buy>*{min-width:0}.price small,.price{white-space:normal}}
+@media(max-width:374px){header.site .lockup{--s:15px}header.site .desc{letter-spacing:.12em}header.site .lockup[data-variant]{padding-left:0;padding-right:0}}
+@media(max-width:339px){header.site nav a{white-space:nowrap;letter-spacing:.04em}}
 </style>
 </head>
 <body>
@@ -474,7 +479,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
           <li data-i="a_l1">Gestion de stock, trésorerie et caisse</li>
           <li data-i="a_l2">Tableaux de bord financiers et coût de revient</li>
           <li data-i="a_l3">Scripts d'automatisation et de traitement de données</li>
-          <li data-i="a_l4">Modèles de documents commerciaux : devis, factures</li>
+          <li data-i="a_l4">Modèles de documents commerciaux&nbsp;: devis, factures</li>
           <li data-i="a_l5">Templates de sites et d'interfaces</li>
         </ul>
         <p class="lbl mode-l" data-i="mode_a">Vendu en ligne, livré en fichier.</p>
@@ -487,10 +492,10 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
           <div class="chips"><span class="chip" data-i="p_chip1">Modèle</span><span class="chip live" data-i="p_chip2">Livré en fichier</span></div>
         </div>
         <h3 id="t-va001" data-i="p_name">Gestion de stock</h3>
-        <p class="pr" data-i="p_pr">Entrées, sorties et seuils d'alerte : le stock d'une PME dans un seul fichier.</p>
+        <p class="pr" data-i="p_pr">Entrées, sorties et seuils d'alerte&nbsp;: le stock d'une PME dans un seul fichier.</p>
 
         <div class="demo" aria-label="Aperçu interactif du modèle" data-ia="aria-label:p_demo">
-          <div class="demo-h"><span class="lbl" data-i="p_try">Essayez : retirez des unités</span><span class="lbl" id="dsum" aria-live="polite"></span></div>
+          <div class="demo-h"><span class="lbl" data-i="p_try">Essayez&nbsp;: retirez des unités</span><span class="lbl" id="dsum" aria-live="polite"></span></div>
           <div class="rows" id="drows" role="table" aria-label="Articles en stock" data-ia="aria-label:p_rows"></div>
           <div class="demo-f"><span class="lbl" data-i="p_prev">Aperçu · données fictives</span><button class="link" type="button" id="dreset" data-i="p_reset">Réinitialiser</button></div>
         </div>
@@ -512,7 +517,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
         <div data-logo data-desc="Solutions" role="img" aria-label="VIRIDIAN Solutions">VIRIDIAN Solutions</div>
         <p class="lbl desc-mono">Custom digital solutions</p>
         <h2 class="h2" id="t-sol" data-i="s_h2">Sites web, applications, systèmes de gestion et développement sur mesure.</h2>
-        <p class="p" data-i="s_p">Un besoin précis, un livrable chiffré à l'avance : je conçois et je développe ce qui correspond à votre activité, pas l'inverse.</p>
+        <p class="p" data-i="s_p">Un besoin précis, un livrable chiffré à l'avance&nbsp;: je conçois et je développe ce qui correspond à votre activité, pas l'inverse.</p>
       </div>
       <div class="avail rv">
         <span class="lbl dot" data-i="s_avail">Disponible pour de nouveaux projets</span>
@@ -528,7 +533,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
       <div role="listitem"><span class="n">03</span><h3 data-i="s3t">Systèmes de gestion et tableaux de bord de données</h3><p data-i="s3p">Les chiffres utiles, au même endroit, à jour.</p></div>
       <div role="listitem"><span class="n">04</span><h3 data-i="s4t">Automatisation et intégration sur mesure</h3><p data-i="s4p">Moins de tâches répétitives, des outils qui se parlent.</p></div>
       <div role="listitem"><span class="n">05</span><h3 data-i="s5t">Sous-traitance technique B2B</h3><p data-i="s5p">Un renfort fiable pour vos projets, selon votre cahier des charges.</p></div>
-      <a class="more" role="listitem" href="#contact" data-subject="devis"><div><span class="n">06</span><h3 style="margin-top:12px" data-i="s6t">Votre besoin n'est pas dans la liste ?</h3></div><span class="go"><span data-i="s6go">Décrivez-le</span> <svg class="ar" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span></a>
+      <a class="more" role="listitem" href="#contact" data-subject="devis"><div><span class="n">06</span><h3 style="margin-top:12px" data-i="s6t">Votre besoin n'est pas dans la liste&nbsp;?</h3></div><span class="go"><span data-i="s6go">Décrivez-le</span> <svg class="ar" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span></a>
     </div>
 
     <div class="steps rv">
@@ -552,7 +557,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
       <div>
         <h2 id="t-fnd" data-i="fnd_h2">L'engagement VIRIDIAN Digital</h2>
         <blockquote>
-          <p data-i="fnd_q">«&nbsp;Trop souvent, les outils performants manquent d'ergonomie, et les beaux produits manquent de structure. VIRIDIAN Digital est né de la volonté de réconcilier ces deux mondes : la rigueur de l'ingénierie des données et la précision du design minimaliste. Ensemble, bâtissons les fondations numériques de vos prochains projets.&nbsp;»</p>
+          <p data-i="fnd_q">«&nbsp;Trop souvent, les outils performants manquent d'ergonomie, et les beaux produits manquent de structure. VIRIDIAN Digital est né de la volonté de réconcilier ces deux mondes&nbsp;: la rigueur de l'ingénierie des données et la précision du design minimaliste. Ensemble, bâtissons les fondations numériques de vos prochains projets.&nbsp;»</p>
         </blockquote>
         <p class="fnd-sig" aria-label="Signature" data-ia="aria-label:fnd_sig"><span class="mono-rc" aria-hidden="true"><svg viewBox="0 0 64 64"><text x="6" y="30" font-size="34">R</text><text x="31" y="56" font-size="34">C</text><line x1="50" y1="6" x2="14" y2="60" pathLength="1"/></svg></span><span class="who"><span class="nm">Ramzi Chouchan</span><span class="lbl" data-i="fnd_role">Fondateur · VIRIDIAN Digital</span></span></p>
       </div>
@@ -566,7 +571,7 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
     <div class="two">
       <div class="rv">
         <h2 class="h2" id="t-ct" data-i="c_h2">Parlons de votre besoin.</h2>
-        <p class="p" data-i="c_p">Un modèle à acheter ou un projet sur mesure : écrivez-moi en quelques lignes.</p>
+        <p class="p" data-i="c_p">Un modèle à acheter ou un projet sur mesure&nbsp;: écrivez-moi en quelques lignes.</p>
         <div class="mail">
           <a href="mailto:contact.viridiandigital@gmail.com" data-mail>contact.viridiandigital@gmail.com</a>
           <button class="pill" type="button" id="copy" data-i="copy">Copier</button>
@@ -632,12 +637,12 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
       <h3>Éditeur du site</h3>
       <p>Le présent site (<b>https://viridiandigital.vercel.app</b>) est édité sous la marque commerciale <b>VIRIDIAN Digital</b>, représentée par son fondateur <b>Ramzi Chouchan</b>, entrepreneur indépendant basé à Sétif, Algérie.</p>
       <ul>
-        <li><b>Contact professionnel :</b> <a href="mailto:contact.viridiandigital@gmail.com">contact.viridiandigital@gmail.com</a></li>
-        <li><b>Activités :</b> Conception et commercialisation de modèles numériques prêts à l'emploi (VIRIDIAN Assets) et prestations de conseil, d'automatisation et de développement sur mesure (VIRIDIAN Solutions).</li>
+        <li><b>Contact professionnel&nbsp;:</b> <a href="mailto:contact.viridiandigital@gmail.com">contact.viridiandigital@gmail.com</a></li>
+        <li><b>Activités&nbsp;:</b> Conception et commercialisation de modèles numériques prêts à l'emploi (VIRIDIAN Assets) et prestations de conseil, d'automatisation et de développement sur mesure (VIRIDIAN Solutions).</li>
       </ul>
       <h3>Hébergement</h3>
       <p>Le site est hébergé par <b>Vercel Inc.</b>, 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
-      <ul><li><b>Site web :</b> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">https://vercel.com</a></li></ul>
+      <ul><li><b>Site web&nbsp;:</b> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">https://vercel.com</a></li></ul>
       <h3>Propriété intellectuelle</h3>
       <p>L'ensemble des contenus présents sur ce site (textes, identité visuelle, logos, architectures de fichiers, modèles et code source) est la propriété exclusive de <b>VIRIDIAN Digital</b>, sauf mention contraire explicite. Toute reproduction, représentation, modification, redistribution ou revente, totale ou partielle, sans autorisation écrite préalable est strictement interdite.</p>
     </div>
@@ -664,17 +669,17 @@ html[lang="fr"] [data-l="en"],html[lang="en"] [data-l="fr"]{display:none!importa
     <div data-l="fr" lang="fr">
       <h2 id="dp-t">Politique de confidentialité</h2>
       <h3>1. Collecte des données personnelles</h3>
-      <p><b>VIRIDIAN Digital</b> applique le principe de minimisation des données et ne collecte que les informations strictement nécessaires au traitement de vos demandes :</p>
+      <p><b>VIRIDIAN Digital</b> applique le principe de minimisation des données et ne collecte que les informations strictement nécessaires au traitement de vos demandes&nbsp;:</p>
       <ul>
-        <li><b>Formulaire de contact (VIRIDIAN Solutions) :</b> Nom, adresse email professionnelle et description du projet transmis volontairement via notre formulaire sécurisé propulsé par <b>Web3Forms</b>.</li>
-        <li><b>Achats de produits numériques (VIRIDIAN Assets) :</b> Les commandes et la livraison instantanée des fichiers numériques sont gérées par notre plateforme partenaire <b>Payhip</b> ; le paiement est traité par <b>PayPal</b>. <b>VIRIDIAN Digital</b> n'a jamais accès à vos coordonnées bancaires ni à vos données de carte.</li>
+        <li><b>Formulaire de contact (VIRIDIAN Solutions)&nbsp;:</b> Nom, adresse email professionnelle et description du projet transmis volontairement via notre formulaire sécurisé propulsé par <b>Web3Forms</b>.</li>
+        <li><b>Achats de produits numériques (VIRIDIAN Assets)&nbsp;:</b> Les commandes et la livraison instantanée des fichiers numériques sont gérées par notre plateforme partenaire <b>Payhip</b>&nbsp;; le paiement est traité par <b>PayPal</b>. <b>VIRIDIAN Digital</b> n'a jamais accès à vos coordonnées bancaires ni à vos données de carte.</li>
       </ul>
       <h3>2. Finalité et conservation des données</h3>
       <p>Les informations transmises via le formulaire de contact sont utilisées exclusivement pour évaluer vos besoins, répondre à vos demandes de devis, assurer le suivi des prestations et établir les documents commerciaux associés. Elles ne sont ni vendues, ni louées, ni cédées à des tiers à des fins commerciales ou publicitaires, et sont conservées uniquement pendant la durée nécessaire à la relation professionnelle.</p>
       <h3>3. Cookies et traceurs</h3>
       <p>Ce site vitrine est conçu dans le respect de votre vie privée et n'utilise aucun cookie publicitaire ni traceur de profilage tiers. Seuls des journaux techniques anonymes peuvent être générés par l'hébergeur (<b>Vercel</b>) afin d'assurer la sécurité et la disponibilité du service.</p>
       <h3>4. Vos droits</h3>
-      <p>Conformément aux standards internationaux relatifs à la protection des données personnelles (notamment le RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit à tout moment, contactez : <a href="mailto:contact.viridiandigital@gmail.com">contact.viridiandigital@gmail.com</a>.</p>
+      <p>Conformément aux standards internationaux relatifs à la protection des données personnelles (notamment le RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit à tout moment, contactez&nbsp;: <a href="mailto:contact.viridiandigital@gmail.com">contact.viridiandigital@gmail.com</a>.</p>
     </div>
     <div data-l="en" lang="en">
       <h2>Privacy Policy</h2>
